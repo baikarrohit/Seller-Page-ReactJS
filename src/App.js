@@ -1,23 +1,12 @@
-import logo from './logo.svg';
-import './App.css';
+import FormInput from "./components/FormInput";
+import ProductList from "./components/ProductList";
 
-function App() {
+function App(props) {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <h2>Welcome to our selling page</h2>
+      <FormInput/>
+      <ProductList id={props.id} price={props.price} name={props.name} category={props.category}/>
     </div>
   );
 }
