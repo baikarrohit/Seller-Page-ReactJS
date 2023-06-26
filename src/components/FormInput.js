@@ -1,14 +1,14 @@
 import React, { useState } from "react";
 
 const FormInput = (props) => {
-  const [enteredID, setEnteredID] = useState("");
+  //const [enteredID, setEnteredID] = useState("");
   const [enteredPrice, setEnteredPrice] = useState("");
   const [enteredName, setEnteredName] = useState("");
   const [enteredCategory, setEnteredCategory] = useState("");
 
-  const idChnageHandler = (event) => {
-    setEnteredID(event.target.value);
-  };
+  // const idChnageHandler = (event) => {
+  //   setEnteredID(event.target.value);
+  // };
 
   const priceChangeHandler = (event) => {
     setEnteredPrice(event.target.value);
@@ -25,15 +25,15 @@ const FormInput = (props) => {
   const formSubmitHandler = (event) => {
     event.preventDefault();
     const productData = {
-      id: enteredID,
+      id: Math.random(),
       price: enteredPrice,
       name: enteredName,
       category: enteredCategory,
     };
-
+    props.onSubmit(productData);
     localStorage.setItem("data", JSON.stringify(productData));
 
-    setEnteredID("");
+    //setEnteredID("");
     setEnteredPrice("");
     setEnteredName("");
     setEnteredCategory("");
@@ -41,8 +41,8 @@ const FormInput = (props) => {
   return (
     <div>
       <form onSubmit={formSubmitHandler}>
-        <label htmlFor="product-id">Product ID: </label>
-        <input type="number" value={enteredID} onChange={idChnageHandler} />
+        {/* <label htmlFor="product-id">Product ID: </label>
+        <input type="number" value={enteredID} onChange={idChnageHandler} /> */}
         <label htmlFor="selling-price">Selling Price: </label>
         <input
           type="number"
@@ -57,9 +57,10 @@ const FormInput = (props) => {
           value={enteredCategory}
           onChange={categoryChangeHandler}
         >
-          <option>Electronics</option>
-          <option>Food</option>
-          <option>Skincare</option>
+          <option value="">Select Your Category</option>
+          <option value="Electronics">Electronics</option>
+          <option value="Food">Food</option>
+          <option value="Skincare">Skincare</option>
         </select>
         <button type="submit">Add Product</button>
       </form>
