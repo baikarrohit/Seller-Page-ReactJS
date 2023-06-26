@@ -43,26 +43,32 @@ const FormInput = (props) => {
       <form onSubmit={formSubmitHandler}>
         {/* <label htmlFor="product-id">Product ID: </label>
         <input type="number" value={enteredID} onChange={idChnageHandler} /> */}
-        <label htmlFor="selling-price">Selling Price: </label>
-        <input
-          type="number"
-          value={enteredPrice}
-          onChange={priceChangeHandler}
-        />
-        <label htmlFor="product-name">Product Name: </label>
-        <input type="text" value={enteredName} onChange={nameChangeHandler} />
-        <label htmlFor="categeory">Choose a Category: </label>
-        <select
-          name="category"
-          value={enteredCategory}
-          onChange={categoryChangeHandler}
-        >
-          <option value="">Select Your Category</option>
-          <option value="Electronics">Electronics</option>
-          <option value="Food">Food</option>
-          <option value="Skincare">Skincare</option>
-        </select>
-        <button type="submit">Add Product</button>
+
+        <span class="col-sm">
+          <label>Selling Price: </label>
+          <input
+            type="number"
+            value={enteredPrice}
+            onChange={priceChangeHandler}
+          />
+        </span>
+        <span class="col-sm">
+          <label>Product Name: </label>
+          <input type="text" value={enteredName} onChange={nameChangeHandler} />
+        </span>
+        <span class="col-sm">
+          <label>Choose a Category: </label>
+          <select value={enteredCategory} onChange={categoryChangeHandler}>
+            <option value="">Select Your Category</option>
+            <option value="Electronics">Electronics</option>
+            <option value="Food">Food</option>
+            <option value="Skincare">Skincare</option>
+          </select>
+        </span>
+
+        <button class="btn btn-primary" type="submit">
+          Add Product
+        </button>
       </form>
     </div>
   );

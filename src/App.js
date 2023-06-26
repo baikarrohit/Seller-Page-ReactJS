@@ -5,7 +5,6 @@ import ProductList from "./components/ProductsCategory/ProductList";
 function App() {
   const [productList, setProductList] = useState([]);
   const submitHandler = (productData) => {
-    
     setProductList((prevProductList) => {
       return [
         ...prevProductList,
@@ -15,14 +14,17 @@ function App() {
           name: productData.name,
           category: productData.category,
         },
-      ]
+      ];
     });
   };
   return (
     <div>
-      <h2>Welcome to our selling page</h2>
+      <header style={{ background:'green' ,textAlign: "center"}}>
+        <h2>Welcome To Our Selling Page</h2>
+      </header>
+
       <FormInput onSubmit={submitHandler} />
-      <ProductList products={productList}/>
+      <ProductList products={productList} />
     </div>
   );
 }

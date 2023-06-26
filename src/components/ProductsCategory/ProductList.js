@@ -19,7 +19,7 @@ const ProductList = (props) => {
             {skincare.length > 0 && (
                 <Skincare products={skincare}/>
             )}
-            {props.products.length === 0 && <h3>No Orders Placed Yet</h3>}
+            {props.products.length === 0 && <h3 style={{textAlign:'center',color:'red',fontSize:'20px'}}>No Orders Placed Yet</h3>}
         </div>
     )
 }
